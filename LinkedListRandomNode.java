@@ -19,3 +19,31 @@ ArrayList<Integer> a=new ArrayList<>();
         
     }
 }
+//......................................................................................................................................................................................................................
+class Solution {
+ListNode head=null;
+    /** @param head The linked list's head.
+        Note that the head is guaranteed to be not null, so it contains at least one node. */
+    public Solution(ListNode head) {
+        this.head=head;
+        
+    }
+    
+    /** Returns a random node's value. */
+    public int getRandom() {
+        int i=1;
+        int res=0;
+        ListNode curr=head;
+        while(curr!=null)
+        {
+            if(Math.random()<1.0/i)
+            {
+                res=curr.val;
+            }
+            i++;
+            curr=curr.next;
+            
+        }
+        return res;
+    }
+}
